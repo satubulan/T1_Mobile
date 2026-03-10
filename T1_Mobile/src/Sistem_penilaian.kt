@@ -2,11 +2,11 @@
 fun main() {
     println("==== SISTEM PENILAIAN ====")
     print("Masukkan nama mahasiswa : ")
-    val nama = readLine()!!
+    val nama = readLine()!! //MEMASUKKAN INPUT MAHASISWA
     print("Masukkan Nilai UTS (0-100): ")
-    var inputUts = readLine()!!
-    var uts = inputUts.toDoubleOrNull()
-
+    var inputUts = readLine()!!//MENGINPUTKAN NILAI UTS
+    var uts = inputUts.toDoubleOrNull() //DIGUNAKAN UNTUK MENGUBAH NILAI DARI VARIABEL UTS MENJADI NULL JIKA MENGINPUT SELAIN ANGKA AKAN DIUBAH MENJADI NULL
+    //PERULANGAN YANG DIGUNAKAN UNTUK MENGECEK APAKAH NILAI YANG DIINPUTKAN NILAI ANGKA ATAU TIDAK JIKA MENGINPUTKAN SELAIN ANGKA MAKA AKAN DIMINTA INPUT KEMBALI
     while (uts == null || uts < 0 || uts > 100) {
             println("Nilai harus antara 0 - 100, coba lagi!")
             print("Masukkan Nilai UTS (0-100): ")
@@ -31,9 +31,9 @@ fun main() {
         inputTugas = readLine()!!
         tugas=inputTugas.toDouble()
     }
-
+    //RUMUS UNTUK MENDAPATKAN NILAI AKHIR DARI MAHASISWA DENGAN PEMBAGIAN UTS 30%, UAS 40%, DAN TUGAS 30%
     val nilaiAkhir = (uts * 0.3) + (uas * 0.4) + (tugas * 0.3)
-
+    //MEMBERIKAN GRADE BERDASARKAN NILAI AKHIR
     val nilaiHuruf = when {
         nilaiAkhir >= 85 -> "A"
         nilaiAkhir >= 70 -> "B"
@@ -41,7 +41,7 @@ fun main() {
         nilaiAkhir >= 50 -> "D"
         else             -> "E"
     }
-    val keterangan = when {
+    val keterangan = when { // KETERANGAN DARI NILAI YANG DIDAPATKAN DARI NILAI AKHIR
         nilaiAkhir >= 85 -> "Sangat Baik"
         nilaiAkhir >= 70 -> "Baik"
         nilaiAkhir >= 60 -> "Cukup"
