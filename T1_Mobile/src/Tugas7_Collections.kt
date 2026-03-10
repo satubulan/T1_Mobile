@@ -50,6 +50,12 @@ fun main (){
         println("${(index + 1).toString().padEnd(5)}${mhs.nama.padEnd(20)}${mhs.nilai}")
 
     }
+    println("=====MAHASISWA TIDAK LULUS=====")
+    for ((index, mhs) in dataMahasiswa.withIndex()) {
+        if (mhs.nilai>=70) continue
+        println("${(index + 1).toString().padEnd(5)}${mhs.nama.padEnd(20)}${mhs.nilai}")
+
+    }
     println("\n=====URUTAN NILAI ASCENDING=====")
     val ascending = dataMahasiswa.sortedBy { it.nilai }
     for ((index, mhs) in ascending.withIndex()) {
