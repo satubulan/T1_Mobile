@@ -1,3 +1,4 @@
+// Ayu Diana (F1D02310040)
 fun main() {
     println("==== SISTEM PENILAIAN ====")
     print("Masukkan nama mahasiswa : ")
