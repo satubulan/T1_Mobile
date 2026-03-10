@@ -63,7 +63,7 @@ fun main (){
     }
 
     println("\n=====KELOMPOK BERDASARKAN GRADE=====")
-    val kelompokGrade = dataMahasiswa.groupBy { getGrade(it.nilai) }
+    val kelompokGrade = dataMahasiswa.groupBy { getGrade(it.nilai) }. toSortedMap()
     for ((grade, listMhs) in kelompokGrade) {
         println("Grade $grade :")
         for (mhs in listMhs) {
